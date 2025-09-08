@@ -1,0 +1,26 @@
+{
+  "git": {
+    "commitMessage": "chore: release v${version}",
+    "tagName": "v${version}",
+    "requireCleanWorkingDir": false
+  },
+  "npm": {
+    "publish": true
+  },
+  "github": {
+    "release": true,
+    "releaseName": "Release ${version}",
+    "assets": []
+  },
+  "hooks": {
+    "before:init": ["npm test", "npm run lint"],
+    "after:bump": "npm run build 2>/dev/null || true",
+    "before:release": "echo 'Ready to release v${version}'"
+  },
+  "plugins": {
+    "@release-it/conventional-changelog": {
+      "preset": "angular",
+      "infile": "CHANGELOG.md"
+    }
+  }
+}
