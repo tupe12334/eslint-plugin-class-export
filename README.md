@@ -287,11 +287,34 @@ pnpm clean       # Remove node_modules and lockfile
 
 ### Releasing
 
-This project uses [release-it](https://github.com/release-it/release-it) for automated releases:
+This project uses [release-it](https://github.com/release-it/release-it) for automated releases with environment variables:
+
+#### Setup Release Environment
+
+1. Copy the environment template:
+```bash
+cp .env.example .env
+```
+
+2. Get your tokens:
+   - **NPM Token**: Visit [npmjs.com/settings/tokens](https://www.npmjs.com/settings/tokens) and create an **Automation** token
+   - **GitHub Token**: Visit [github.com/settings/tokens](https://github.com/settings/tokens) and create a token with `repo` and `write:packages` scopes
+
+3. Update `.env` file:
+```env
+NPM_TOKEN=npm_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+GITHUB_TOKEN=ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+```
+
+#### Release Commands
 
 ```bash
-pnpm release     # Runs tests, linting, and release process
+pnpm release         # Full release: tests, linting, version bump, npm publish, GitHub release
+pnpm release:dry     # Safe dry-run preview (no external calls)
+pnpm release --dry-run  # Full dry-run preview (includes npm/GitHub checks)
 ```
+
+**Note**: The `.env` file is git-ignored for security. Never commit tokens to version control.
 
 ## Contributing
 
