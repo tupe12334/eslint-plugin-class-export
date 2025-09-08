@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-class-export",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "ESLint plugin to enforce class export rules",
   "main": "index.js",
   "scripts": {
@@ -49,7 +49,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/tupe12334/eslint-plugin-class-export.git"
+    "url": "git+https://github.com/tupe12334/eslint-plugin-class-export.git"
   },
   "bugs": {
     "url": "https://github.com/tupe12334/eslint-plugin-class-export/issues"
