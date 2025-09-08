@@ -44,6 +44,7 @@
     "lib/",
     "README.md",
     "CHANGELOG.md",
+    "CONTRIBUTING.md",
     "LICENSE"
   ],
   "repository": {

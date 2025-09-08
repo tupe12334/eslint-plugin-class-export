@@ -1,6 +1,19 @@
 # eslint-plugin-class-export
 
+[![npm version](https://badge.fury.io/js/eslint-plugin-class-export.svg)](https://badge.fury.io/js/eslint-plugin-class-export)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![ESLint](https://img.shields.io/badge/ESLint-9.0%2B-4B32C3?logo=eslint)](https://eslint.org/)
+
 An ESLint plugin that enforces class export rules, allowing you to specify whether classes must have exports and what type of exports are allowed.
+
+## Features
+
+✅ **ESLint v9 Compatible** - Built with flat config support  
+✅ **AST Selector Patterns** - High-performance rule implementation  
+✅ **Flexible Configuration** - Support for default, named, any, or no exports  
+✅ **Naming Restrictions** - Optional validation of export naming patterns  
+✅ **Zero Dependencies** - Lightweight and fast  
+✅ **TypeScript Ready** - Works with TypeScript via ESLint
 
 ## Installation
 
@@ -243,86 +256,14 @@ export default [
 }
 ```
 
-## Implementation Details
-
-This plugin uses **AST selector patterns** for optimal performance and precision:
-
-- `ExportDefaultDeclaration > ClassDeclaration` - Targets classes with default exports
-- `ExportNamedDeclaration > ClassDeclaration` - Targets classes with named exports  
-- `Program > ClassDeclaration:not(ExportDefaultDeclaration > ClassDeclaration, ExportNamedDeclaration > ClassDeclaration)` - Targets non-exported classes
-
-The selector-based approach provides better performance than traditional AST traversal and enables more precise rule targeting.
-
 ## Requirements
 
 - **Node.js**: >= 12.0.0
-- **ESLint**: >= 9.0.0 (for flat config support)
-- **Package Manager**: pnpm recommended (configured with `packageManager` field)
-
-## Development
-
-This project uses **pnpm** exclusively for package management. All scripts are optimized for pnpm:
-
-### Running Tests
-
-```bash
-pnpm test
-pnpm test:watch  # Watch mode for development
-```
-
-### Linting
-
-```bash
-pnpm lint
-pnpm lint:fix    # Auto-fix linting issues
-```
-
-### Package Management
-
-```bash
-pnpm install     # Install dependencies
-pnpm fresh       # Clean install (removes node_modules and lockfile)
-pnpm clean       # Remove node_modules and lockfile
-```
-
-### Releasing
-
-This project uses [release-it](https://github.com/release-it/release-it) for automated releases with environment variables:
-
-#### Setup Release Environment
-
-1. Copy the environment template:
-```bash
-cp .env.example .env
-```
-
-2. Get your tokens:
-   - **NPM Token**: Visit [npmjs.com/settings/tokens](https://www.npmjs.com/settings/tokens) and create an **Automation** token
-   - **GitHub Token**: Visit [github.com/settings/tokens](https://github.com/settings/tokens) and create a token with `repo` and `write:packages` scopes
-
-3. Update `.env` file:
-```env
-NPM_TOKEN=npm_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-GITHUB_TOKEN=ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-```
-
-#### Release Commands
-
-```bash
-pnpm release         # Full release: tests, linting, version bump, npm publish, GitHub release
-pnpm release:dry     # Safe dry-run preview (no external calls)
-pnpm release --dry-run  # Full dry-run preview (includes npm/GitHub checks)
-```
-
-**Note**: The `.env` file is git-ignored for security. Never commit tokens to version control.
+- **ESLint**: >= 9.0.0 (flat config support)
 
 ## Contributing
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for development setup, testing guidelines, and release processes.
 
 ## Author
 
