@@ -19,7 +19,7 @@ ruleTester.run('class-export', rule, {
       code: 'export default class {}',
       options: [{ require: 'default' }]
     },
-    
+
     // Named export tests
     {
       code: 'export class UserService {}',
@@ -29,7 +29,7 @@ ruleTester.run('class-export', rule, {
       code: 'class UserModel {} export { UserModel };',
       options: [{ require: 'named' }]
     },
-    
+
     // Named export with allowed names
     {
       code: 'export class UserComponent {}',
@@ -43,7 +43,7 @@ ruleTester.run('class-export', rule, {
       code: 'class UserModel {} export { UserModel };',
       options: [{ require: 'named', allowedExportNames: ['Model'] }]
     },
-    
+
     // Any export tests
     {
       code: 'export default class UserComponent {}',
@@ -57,7 +57,7 @@ ruleTester.run('class-export', rule, {
       code: 'class UserModel {} export { UserModel };',
       options: [{ require: 'any' }]
     },
-    
+
     // Any export with allowed names
     {
       code: 'export class UserComponent {}',
@@ -67,7 +67,7 @@ ruleTester.run('class-export', rule, {
       code: 'export default class UserComponent {}',
       options: [{ require: 'any', allowedExportNames: ['Component'] }]
     },
-    
+
     // No export tests
     {
       code: 'class UserHelper {}',
@@ -77,7 +77,7 @@ ruleTester.run('class-export', rule, {
       code: 'class UtilityClass {}',
       options: [{ require: 'none' }]
     },
-    
+
     // Default behavior (any export)
     {
       code: 'export default class UserComponent {}'
@@ -103,7 +103,7 @@ ruleTester.run('class-export', rule, {
         message: "Class 'UserComponent' must be exported as default."
       }]
     },
-    
+
     // Named export required but missing
     {
       code: 'class UserService {}',
@@ -119,7 +119,7 @@ ruleTester.run('class-export', rule, {
         message: "Class 'UserService' must be exported as named export."
       }]
     },
-    
+
     // Named export with wrong name
     {
       code: 'export class UserHelper {}',
@@ -135,7 +135,7 @@ ruleTester.run('class-export', rule, {
         message: "Class 'DataProcessor' name must end with one of: Model, Controller."
       }]
     },
-    
+
     // Any export required but missing
     {
       code: 'class UserModel {}',
@@ -144,7 +144,7 @@ ruleTester.run('class-export', rule, {
         message: "Class 'UserModel' must be exported (default or named)."
       }]
     },
-    
+
     // Any export with wrong name (named export)
     {
       code: 'export class UserHandler {}',
@@ -153,7 +153,7 @@ ruleTester.run('class-export', rule, {
         message: "Class 'UserHandler' name must end with one of: Component, Service."
       }]
     },
-    
+
     // No export required but has export
     {
       code: 'export default class UserHelper {}',
@@ -176,7 +176,7 @@ ruleTester.run('class-export', rule, {
         message: "Class 'InternalHelper' must not be exported."
       }]
     },
-    
+
     // Default behavior (any export required)
     {
       code: 'class UserModel {}',
@@ -184,7 +184,7 @@ ruleTester.run('class-export', rule, {
         message: "Class 'UserModel' must be exported (default or named)."
       }]
     },
-    
+
     // Anonymous class tests
     {
       code: 'export default class {}',

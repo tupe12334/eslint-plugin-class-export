@@ -1,10 +1,10 @@
 const classExportRule = require('./lib/rules/class-export');
-const pkg = require('./package.json');
+const package_ = require('./package.json');
 
 const plugin = {
   meta: {
-    name: pkg.name,
-    version: pkg.version
+    name: package_.name,
+    version: package_.version
   },
   rules: {
     'class-export': classExportRule
