@@ -265,6 +265,10 @@ export default [
 
 We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for development setup, testing guidelines, and release processes.
 
+## Related Projects
+
+- [moadim](https://moadim.io/) — loop engineering: build, schedule & run agent loops.
+
 ## Author
 
 Created by **Ofek Gabay**
