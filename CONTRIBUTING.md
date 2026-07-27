@@ -83,6 +83,15 @@ ruleTester.run('class-export', rule, {
 });
 ```
 
+## Changesets
+
+This project uses [Changesets](https://github.com/changesets/changesets) to track changes for release notes. The `changeset-check` CI job (`.github/workflows/changesets.yml`) fails any pull request that modifies source files without an accompanying changeset:
+
+```bash
+npx changeset add          # describe the change for the changelog
+npx changeset add --empty  # use this if the change needs no release note (e.g. docs-only)
+```
+
 ## Release Process
 
 ### Setup Release Environment
