@@ -1,9 +1,3 @@
-
-
-## 1.0.1 (2025-09-08)
-
-## 1.0.1 (2025-09-08)
-
 # Changelog
 
 All notable changes to this project will be documented in this file.
@@ -22,3 +16,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Backwards compatibility with eslintrc format
 - Comprehensive test suite
 - Predefined configurations (recommended, strict-default, strict-named, flexible)
+
+## 1.0.1 (2025-09-08)
